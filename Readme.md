@@ -22,4 +22,10 @@ I’ll get to:
 Improve my skills in frontend development (React) and backend (Node.js). Explore API integrations (for recipe suggestions). Design a user-friendly and interactive system that combines emotions with food choices. Learn how to manage user data, ratings, and content sharing.
 
 ## Conclusion
-The mix of frontend (React) and backend (Node.js) development will give you solid full-stack experience, while working with APIs like Spoonacular or Edamam will help you dive deeper into API integration. You’ll also learn how to handle databases efficiently with MongoDB and manage user authentication with Firebase.
+The mix of frontend (React) and backend (Node.js) development will give you solid full-stack experience, while working with APIs like Spoonacular or Edamam will help you dive deeper into API integration. You’ll also learn how to handle databases efficiently with MongoDB and manage user authentication with Firebase
+Improve my skills in frontend development (React) and backend (Node.js). 
+Explore API integrations (for recipe suggestions). 
+Design a user-friendly and interactive system that combines emotions with food choices. 
+
+
+
