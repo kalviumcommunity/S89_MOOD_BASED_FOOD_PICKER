@@ -23,7 +23,11 @@ Improve my skills in frontend development (React) and backend (Node.js). Explore
 
 ## Conclusion
 
+The mix of frontend (React) and backend (Node.js) development will give you solid full-stack experience, while working with APIs like Spoonacular or Edamam will help you dive deeper into API integration. You’ll also learn how to handle databases efficiently with MongoDB and manage user authentication.
+
+
 The mix of frontend (React) and backend (Node.js) development will give you solid full-stack experience, while working with APIs like Spoonacular or Edamam will help you dive deeper into API integration. You’ll also learn how to handle databases efficiently with MongoDB and manage user authentication with Firebase.
+
 
 ## Link
 https://drive.google.com/file/d/1wYbFMZFqoyB4R2-sPuQTsU7IOEI606t-/view?usp=sharing
