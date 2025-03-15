@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "ASAP_Project_1_Database",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}
