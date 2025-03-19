@@ -1,4 +1,5 @@
 const express = require("express");
+const mongoose = require("mongoose");
 
 const app = express();
 
@@ -11,10 +12,12 @@ app.get("/ping", (req, res) => {
 });
 
 
-app.listen(3000, (err) => {
-    if (err) {
-        console.error("Failed to start the server. Error:", err.message);
-    } else {
-        console.log("Server connected successfully on port 3000");
+app.listen(3000, async() => {
+    try{
+        await mongoose.connect("mongodb+srv://rohithagannamaneedi:1Watch21@cluster0.tag2z.mongodb.net/");
+        console.log("Server connected successfully")
+    }catch(error){
+        console.log("Error")
     }
+    
 });
