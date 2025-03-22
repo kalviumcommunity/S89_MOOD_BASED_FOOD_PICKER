@@ -1,5 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const dotenv = require("dotenv");
+dotenv.config();
 
 const app = express();
 
@@ -14,7 +16,7 @@ app.get("/ping", (req, res) => {
 
 app.listen(3000, async() => {
     try{
-        await mongoose.connect("mongodb+srv://rohithagannamaneedi:1Watch21@cluster0.tag2z.mongodb.net/");
+        await mongoose.connect(process.env.MONGO_URL);
         console.log("Server connected successfully")
     }catch(error){
         console.log("Error")
