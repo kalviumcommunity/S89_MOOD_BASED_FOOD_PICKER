@@ -13,6 +13,14 @@ app.get("/ping", (req, res) => {
     }
 });
 
+app.get("/", (req, res) => {
+    try {
+        res.status(200).send({ msg: "mongoDB connected" });
+    } catch (error) {
+        res.status(500).send({ msg: "Server error occurred", error: error.message });
+    }
+});
+
 
 app.listen(3000, async() => {
     try{
