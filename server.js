@@ -5,9 +5,20 @@ dotenv.config();
 
 const app = express();
 
+const moodRouter = require("./router");
+app.use('/mood',moodRouter);
+
 app.get("/ping", (req, res) => {
     try {
         res.status(200).send({ msg: "pong" });
+    } catch (error) {
+        res.status(500).send({ msg: "Server error occurred", error: error.message });
+    }
+});
+
+app.get("/", (req, res) => {
+    try {
+        res.status(200).send({ msg: "mongoDB connected" });
     } catch (error) {
         res.status(500).send({ msg: "Server error occurred", error: error.message });
     }
