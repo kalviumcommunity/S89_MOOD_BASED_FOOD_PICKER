@@ -5,6 +5,9 @@ dotenv.config();
 
 const app = express();
 
+const moodRouter = require("./router");
+app.use('/mood',moodRouter);
+
 app.get("/ping", (req, res) => {
     try {
         res.status(200).send({ msg: "pong" });
