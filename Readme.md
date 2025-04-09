@@ -26,3 +26,7 @@ The mix of frontend (React) and backend (Node.js) development will give you soli
 
 ## Link
 https://drive.google.com/file/d/1wYbFMZFqoyB4R2-sPuQTsU7IOEI606t-/view?usp=sharing
+
+
+## Deployes Link
+https://s89-mood-based-food-picker.pages.dev/
