@@ -1,0 +1,15 @@
+.moodcard > img{
+    width: 80%;
+    height: 10%;
+}
+
+.moodcard{
+    background-color:dimgrey;
+    border-radius: 3%;
+    color: black;
+}
+
+.moodcard > p{
+    display: flex;
+    justify-content: center;
+}
