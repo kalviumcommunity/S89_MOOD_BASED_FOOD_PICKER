@@ -7,11 +7,11 @@ router.use(express.json());
 
 router.post('/foods',async(req,res)=>{
     try {
-        const {mood,foods} = req.body;
-        if(!mood || !foods){
+        const {mood,foods,votes,comments} = req.body;
+        if(!mood || !foods || !votes || !comments){
             res.status(400).send({msg:"All fields are required"});
         }
-        const foodData = new food({mood,foods});
+        const foodData = new food({mood,foods,votes,comments});
         await foodData.save();
         res.status(200).send({msg:"Data created successfully",foodData});
     } catch (error) {
@@ -33,13 +33,13 @@ router.get('/foods',async(req,res)=>{
 
 router.put('/foods/:id', async (req, res) => {
     try {
-        const {mood,foods} = req.body;
-        if (!mood || !foods) {
+        const {mood,foods,votes,comments} = req.body;
+        if (!mood || !foods || !votes || !comments) {
             return res.status(400).send({ msg: "All fields are required for update" });
         }
         const updatedFood = await food.findByIdAndUpdate(
             req.params.id,
-            { mood,foods }
+            { mood,foods,votes,comments }
         );
         if (!updatedFood) {
             return res.status(404).send({ msg: "Food not found" });
