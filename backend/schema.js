@@ -8,7 +8,16 @@ const user = mongoose.Schema({
     foods:{
         type:[String],
         required:true
+    },
+    votes:{
+        type:[String],
+        required:true
+    },
+    comments:{
+        type:String,
+        required:true
     }
+    
 })
 
 const food=mongoose.model("rohitha",user);
