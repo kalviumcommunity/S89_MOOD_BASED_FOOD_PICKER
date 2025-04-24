@@ -7,16 +7,21 @@ router.use(express.json());
 
 router.post('/foods',async(req,res)=>{
     try {
+        console.log(req.body)
         const {mood,foods,votes,comments} = req.body;
         if(!mood || !foods || !votes || !comments){
-            res.status(400).send({msg:"All fields are required"});
+            return res.status(400).send({msg:"All fields are required"});
         }
-        const foodData = new food({mood,foods,votes,comments});
+        const com=[];
+        com.push(comments);
+        const foodData = new food({mood,foods,votes,comments:com});
         await foodData.save();
-        res.status(200).send({msg:"Data created successfully",foodData});
+        return res.status(200).send({msg:"Data created successfully",foodData});
     } catch (error) {
-        res.status(500).send({msg:"Something went wrong",error});
         console.log(error);
+
+        return res.status(500).send({msg:"Something went wrong",error});
+        
     }
 });
 

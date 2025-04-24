@@ -18,6 +18,13 @@ const Navbar = () => {
   <button style={{background:"black",color:"white"}}>Mood</button>
 
 </div>
+
+<div onClick={()=>{
+  navigate("/addfood")
+}}>
+  <button style={{background:"black",color:"white"}}>Add Food</button>
+
+</div>
     </div>
     
   )

@@ -10,11 +10,11 @@ const user = mongoose.Schema({
         required:true
     },
     votes:{
-        type:[String],
+        type:String,
         required:true
     },
     comments:{
-        type:String,
+        type:[String],
         required:true
     }
     
