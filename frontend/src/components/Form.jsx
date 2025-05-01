@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const FormPage = () => {
+
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     mood: "",
     foods: "",
@@ -19,6 +23,7 @@ const FormPage = () => {
     try {
       await axios.post("http://localhost:3000/mood/foods", formData);
       alert("Data submitted successfully!");
+      navigate("/food"); 
     } catch (error) {
       console.error("Error submitting form data:", error);
     }
@@ -48,3 +53,4 @@ const FormPage = () => {
 };
 
 export default FormPage;
+
