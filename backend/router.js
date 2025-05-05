@@ -9,7 +9,7 @@ router.post('/foods',async(req,res)=>{
     try {
         console.log(req.body)
         const {mood,foods,votes,comments} = req.body;
-        if(!mood || !foods || !votes || !comments){
+        if(!foods|| !mood || !votes || !comments){
             return res.status(400).send({msg:"All fields are required"});
         }
         const com=[];
@@ -39,7 +39,7 @@ router.get('/foods',async(req,res)=>{
 router.put('/foods/:id', async (req, res) => {
     try {
         const {mood,foods,votes,comments} = req.body;
-        if (!mood || !foods || !votes || !comments) {
+        if (!mood || !foods || !comments || !votes) {
             return res.status(400).send({ msg: "All fields are required for update" });
         }
         const updatedFood = await food.findByIdAndUpdate(
