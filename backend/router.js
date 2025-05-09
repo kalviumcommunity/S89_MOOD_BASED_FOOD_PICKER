@@ -8,13 +8,13 @@ router.use(express.json());
 router.post('/foods',async(req,res)=>{
     try {
         console.log(req.body)
-        const {mood,foods,votes,comments} = req.body;
-        if(!foods|| !mood || !votes || !comments){
+        const {userId,mood,foods,votes,comments} = req.body;
+        if(!userId || !foods|| !mood || !votes || !comments){
             return res.status(400).send({msg:"All fields are required"});
         }
         const com=[];
         com.push(comments);
-        const foodData = new food({mood,foods,votes,comments:com});
+        const foodData = new food({userId,mood,foods,votes,comments:com});
         await foodData.save();
         return res.status(200).send({msg:"Data created successfully",foodData});
     } catch (error) {
@@ -25,11 +25,16 @@ router.post('/foods',async(req,res)=>{
     }
 });
 
-router.get('/foods',async(req,res)=>{
+router.get('/:id',async(req,res)=>{
     try {
-        const mood = await food.find();
+        const {id} = req.params;
+        if(!id){
+            return res.status(400).send({msg:"Please provide Food-Data id"});
+
+        }
+        const mood = await food.find({userId:id});
         
-        res.status(200).send({msg:"Data retrieved successfully",mood});
+        return res.status(200).send({msg:"Food-Data retrieved successfully",mood});
     } catch (error) {
         res.status(500).send({msg:"Something went wrong",error});
         console.log(error);
@@ -44,7 +49,7 @@ router.put('/foods/:id', async (req, res) => {
         }
         const updatedFood = await food.findByIdAndUpdate(
             req.params.id,
-            { mood,foods,votes,comments }
+            {mood,foods,votes,comments }
         );
         if (!updatedFood) {
             return res.status(404).send({ msg: "Food not found" });

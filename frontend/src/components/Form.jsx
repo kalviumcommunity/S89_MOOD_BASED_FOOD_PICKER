@@ -11,7 +11,7 @@ const FormPage = () => {
     foods: "",
     votes: "",
     comments: "",
-    
+    userId:"",
   });
 
   const handleChange = (e) => {
@@ -20,6 +20,11 @@ const FormPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const user = JSON.parse(localStorage.getItem("user"));
+    if (!user) {
+      alert("Please log in to submit the form.");
+      return;
+    }
     try {
       await axios.post("http://localhost:3000/mood/foods", formData);
       alert("Data submitted successfully!");
